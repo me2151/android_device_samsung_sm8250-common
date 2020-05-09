@@ -39,6 +39,10 @@ PRODUCT_PACKAGES += \
     fastbootd \
     init.recovery.qcom.rc
 
+# Sensors
+PRODUCT_PACKAGES += \
+    android.hardware.sensors@1.0-impl.samsung-sm8150
+
 # Telephony
 PRODUCT_PACKAGES += \
     telephony-ext
