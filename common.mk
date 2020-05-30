@@ -27,6 +27,10 @@ PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
 PRODUCT_PACKAGES += \
     audio.a2dp.default
 
+# HotwordEnrollement app permissions
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/configs/privapp-permissions-hotword.xml:system/etc/permissions/privapp-permissions-hotword.xml
+
 # Init
 PRODUCT_PACKAGES += \
     init.qcom.rc
