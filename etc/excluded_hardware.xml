@@ -5,4 +5,5 @@
 -->
 <permissions>
     <unavailable-feature name="android.hardware.biometrics.face" />
+    <unavailable-feature name="samsung.hardware.uwb" />
 </permissions>
