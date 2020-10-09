@@ -757,4 +757,7 @@
     </string-array>
     <bool name="config_pinnerCameraApp">true</bool>
     <bool name="config_pinnerHomeApp">true</bool>
+
+    <!-- Whether device supports double tap to wake -->
+    <bool name="config_supportDoubleTapWake">true</bool>
 </resources>
