@@ -21,11 +21,16 @@ PRODUCT_PACKAGE_OVERLAYS += \
 
 PRODUCT_ENFORCE_RRO_TARGETS += *
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
-    $(COMMON_PATH)/overlay-lineage/lineage-sdk
+    $(COMMON_PATH)/overlay-lineage/lineage-sdk \
+    $(COMMON_PATH)/overlay-lineage/packages/apps/Snap
 
 # Audio 
 PRODUCT_PACKAGES += \
     audio.a2dp.default
+
+# Camera
+PRODUCT_PACKAGES += \
+    Snap
 
 # HotwordEnrollement app permissions
 PRODUCT_COPY_FILES += \
