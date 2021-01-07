@@ -1,3 +1,8 @@
+#
+# Copyright (C) 2018-2019 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+#
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
@@ -5,6 +10,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 $(call inherit-product-if-exists, vendor/samsung/sm8250-common/sm8250-common-vendor.mk)
 
 COMMON_PATH := device/samsung/sm8250-common
+
 TARGET_COPY_OUT_VENDOR_OVERLAY ?= $(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PLATFORM_VNDK_VERSION)
 
 # Soong Namespaces
@@ -15,15 +21,13 @@ PRODUCT_SOONG_NAMESPACES += \
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Overlays
-PRODUCT_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay
+DEVICE_PACKAGE_OVERLAYS += \
+    $(COMMON_PATH)/overlay \
+    $(COMMON_PATH)/overlay-carbon
+                            
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
-
-# GSI AVB Public Keys
-PRODUCT_PACKAGES += \
-    q-gsi.avbpubkey \
-    r-gsi.avbpubkey \
-    s-gsi.avbpubkey
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += $(COMMON_PATH)/overlay-carbon/packages/apps/Snap
 
 # Init Resources
 PRODUCT_PACKAGES += \
@@ -50,6 +54,13 @@ PRODUCT_COPY_FILES += \
 # Fingerprint
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service.samsung-sm8250
+
+# Fingerprint Inscreen
+PRODUCT_PACKAGES += \
+    vendor.lineage.biometrics.fingerprint.inscreen@1.0-service.samsung-sm8250
+
+PRODUCT_COPY_FILES += \
+    vendor/carbon/prebuilt/etc/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml
 
 # NFC
 PRODUCT_PACKAGES += \
@@ -101,8 +112,3 @@ PRODUCT_COPY_FILES += \
 
 # Properties
 -include $(COMMON_PATH)/vendor_prop.mk
-
-# Lineage
-ifneq ($(LINEAGE_BUILD),)
--include $(COMMON_PATH)/sm8250_lineage.mk
-endif
