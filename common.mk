@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-COMMON_PATH := device/samsung/sm8150-common
+COMMON_PATH := device/samsung/sm8250-common
 
 PRODUCT_TARGET_VNDK_VERSION := 29
 
@@ -12,7 +12,7 @@ PRODUCT_TARGET_VNDK_VERSION := 29
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 # Proprietary blobs
-$(call inherit-product-if-exists, vendor/samsung/sm8150-common/sm8150-common-vendor.mk)
+$(call inherit-product-if-exists, vendor/samsung/sm8250-common/sm8250-common-vendor.mk)
 
 # Overlays
 PRODUCT_PACKAGE_OVERLAYS += \
@@ -52,7 +52,7 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service.sm8150-libperfmgr
+    android.hardware.power-service.sm8250-libperfmgr
 
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PLATFORM_VNDK_VERSION)/etc/powerhint.json
@@ -68,7 +68,7 @@ PRODUCT_PACKAGES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@2.1-service.sm8150-multihal
+    android.hardware.sensors@2.1-service.sm8250-multihal
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
@@ -83,7 +83,7 @@ PRODUCT_BOOT_JARS += \
 
 # Touch
 PRODUCT_PACKAGES += \
-    lineage.touch@1.0-service.sm8150
+    lineage.touch@1.0-service.sm8250
 
 # Trust HAL
 PRODUCT_PACKAGES += \

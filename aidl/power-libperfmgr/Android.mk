@@ -5,7 +5,7 @@ LOCAL_PATH := hardware/samsung/aidl/power-libperfmgr
 
 include $(CLEAR_VARS)
 
-LOCAL_MODULE := android.hardware.power-service.sm8150-libperfmgr
+LOCAL_MODULE := android.hardware.power-service.sm8250-libperfmgr
 LOCAL_MODULE_STEM := android.hardware.power-service.samsung-libperfmgr
 LOCAL_MODULE_TAGS  := optional
 

@@ -5,7 +5,7 @@ LOCAL_PATH := hardware/samsung/hidl/sensors/2.1
 
 include $(CLEAR_VARS)
 
-LOCAL_MODULE := android.hardware.sensors@2.1-service.sm8150-multihal
+LOCAL_MODULE := android.hardware.sensors@2.1-service.sm8250-multihal
 LOCAL_MODULE_STEM := android.hardware.sensors@2.1-service.samsung-multihal
 LOCAL_MODULE_TAGS  := optional
 

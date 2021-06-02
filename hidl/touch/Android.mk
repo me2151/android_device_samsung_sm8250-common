@@ -27,7 +27,7 @@ LOCAL_PATH := hardware/samsung/hidl/touch
 
 include $(CLEAR_VARS)
 
-LOCAL_MODULE := lineage.touch@1.0-service.sm8150
+LOCAL_MODULE := lineage.touch@1.0-service.sm8250
 LOCAL_MODULE_STEM := lineage.touch@1.0-service.samsung
 LOCAL_MODULE_TAGS  := optional
 
