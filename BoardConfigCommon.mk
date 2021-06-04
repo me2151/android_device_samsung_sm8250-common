@@ -6,6 +6,8 @@
 
 BOARD_VENDOR := samsung
 COMMON_PATH := device/samsung/sm8250-common
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno650
+TARGET_SPECIFIC_HEADER_PATH += $(COMMON_PATH)/include
 
 # Architecture
 TARGET_ARCH := arm64
@@ -36,6 +38,7 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/samsung/sm8250
+TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_CLANG_COMPILE := true
 
 # Image
